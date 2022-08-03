@@ -1,9 +1,20 @@
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
+var tglbtn = document.getElementById("nav-toggle");
+var navlst = document.getElementById("nav-list")
+tglbtn.addEventListener('click', () => {navlst.classList.toggle("active");});
+
+// event pada saat link di klik
+$('.page-scroll').on('click', function(e) {
+
+  // ambil isi href
+  var tujuan = $(this).attr('href');
+  // tangkap elemen yang bersangkutan
+  var elemenTujuan = $(tujuan);
+
+  // pindahkan scroll
+  $('html,body').animate({
+    scrollTop: elemenTujuan.offset().top - 50
+  }, 1250, 'easeInOutExpo');
+
+  e.preventDefault();
+
+});
