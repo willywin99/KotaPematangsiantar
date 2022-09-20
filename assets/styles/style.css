@@ -168,6 +168,10 @@ footer p a {
 }
 
 @media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
   .navbar {
     flex-direction: column;
   }
